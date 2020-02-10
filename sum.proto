@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+
+service ComputeSum {
+    rpc ComputeSum (SumRequest) returns (ResultReply) {
+    }
+}
+
+message SumRequest {
+    int32 firstOperand = 1;
+    int32 secondOperand = 2;
+}
+
+message ResultReply {
+    int32 result = 1;
+}
