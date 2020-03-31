@@ -3,6 +3,6 @@ config_version: 3
 
 http:
   rules:
-    - selector: example.YourService.Echo
-      post: /v1/example/echo
+    - selector: sum.SumComputer.ComputeSum
+      post: "/test/sum"
       body: "*"

@@ -111,24 +111,25 @@ func (m *ResultReply) GetResult() int32 {
 }
 
 func init() {
-	proto.RegisterType((*SumRequest)(nil), "SumRequest")
-	proto.RegisterType((*ResultReply)(nil), "ResultReply")
+	proto.RegisterType((*SumRequest)(nil), "sum.SumRequest")
+	proto.RegisterType((*ResultReply)(nil), "sum.ResultReply")
 }
 
 func init() { proto.RegisterFile("sum.proto", fileDescriptor_62743f9cdc99b9fd) }
 
 var fileDescriptor_62743f9cdc99b9fd = []byte{
-	// 151 bytes of a gzipped FileDescriptorProto
+	// 166 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x2c, 0x2e, 0xcd, 0xd5,
-	0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x57, 0x0a, 0xe3, 0xe2, 0x0a, 0x2e, 0xcd, 0x0d, 0x4a, 0x2d, 0x2c,
-	0x4d, 0x2d, 0x2e, 0x11, 0x52, 0xe2, 0xe2, 0x49, 0xcb, 0x2c, 0x2a, 0x2e, 0xf1, 0x2f, 0x48, 0x2d,
-	0x4a, 0xcc, 0x4b, 0x91, 0x60, 0x54, 0x60, 0xd4, 0x60, 0x0d, 0x42, 0x11, 0x13, 0x52, 0xe1, 0xe2,
-	0x2d, 0x4e, 0x4d, 0xce, 0xcf, 0x4b, 0x81, 0x29, 0x62, 0x02, 0x2b, 0x42, 0x15, 0x54, 0x52, 0xe5,
-	0xe2, 0x0e, 0x4a, 0x2d, 0x2e, 0xcd, 0x29, 0x09, 0x4a, 0x2d, 0xc8, 0xa9, 0x14, 0x12, 0xe3, 0x62,
-	0x2b, 0x02, 0x73, 0xa1, 0x46, 0x42, 0x79, 0x46, 0xe6, 0x5c, 0x5c, 0xce, 0xf9, 0xb9, 0x05, 0xa5,
-	0x25, 0xa9, 0xc1, 0xa5, 0xb9, 0x42, 0x9a, 0x28, 0x3c, 0x6e, 0x3d, 0x84, 0xcb, 0xa4, 0x78, 0xf4,
-	0x90, 0x8c, 0x53, 0x62, 0x48, 0x62, 0x03, 0x3b, 0xdf, 0x18, 0x10, 0x00, 0x00, 0xff, 0xff, 0xb3,
-	0xa8, 0xeb, 0x2a, 0xcb, 0x00, 0x00, 0x00,
+	0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x2e, 0x2e, 0xcd, 0x55, 0x0a, 0xe3, 0xe2, 0x0a, 0x2e,
+	0xcd, 0x0d, 0x4a, 0x2d, 0x2c, 0x4d, 0x2d, 0x2e, 0x11, 0x52, 0xe2, 0xe2, 0x49, 0xcb, 0x2c, 0x2a,
+	0x2e, 0xf1, 0x2f, 0x48, 0x2d, 0x4a, 0xcc, 0x4b, 0x91, 0x60, 0x54, 0x60, 0xd4, 0x60, 0x0d, 0x42,
+	0x11, 0x13, 0x52, 0xe1, 0xe2, 0x2d, 0x4e, 0x4d, 0xce, 0xcf, 0x4b, 0x81, 0x29, 0x62, 0x02, 0x2b,
+	0x42, 0x15, 0x54, 0x52, 0xe5, 0xe2, 0x0e, 0x4a, 0x2d, 0x2e, 0xcd, 0x29, 0x09, 0x4a, 0x2d, 0xc8,
+	0xa9, 0x14, 0x12, 0xe3, 0x62, 0x2b, 0x02, 0x73, 0xa1, 0x46, 0x42, 0x79, 0x46, 0x0e, 0x5c, 0xdc,
+	0xc1, 0xa5, 0xb9, 0xce, 0xf9, 0xb9, 0x05, 0xa5, 0x25, 0xa9, 0x45, 0x42, 0x86, 0x5c, 0x5c, 0x50,
+	0x76, 0x70, 0x69, 0xae, 0x10, 0xbf, 0x1e, 0xc8, 0xb1, 0x08, 0xe7, 0x49, 0x09, 0x80, 0x05, 0x90,
+	0xcc, 0x55, 0x62, 0x48, 0x62, 0x03, 0x7b, 0xc6, 0x18, 0x10, 0x00, 0x00, 0xff, 0xff, 0x61, 0xa4,
+	0x12, 0xad, 0xd9, 0x00, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -139,72 +140,72 @@ var _ grpc.ClientConnInterface
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion6
 
-// ComputeSumClient is the client API for ComputeSum service.
+// SumComputerClient is the client API for SumComputer service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type ComputeSumClient interface {
+type SumComputerClient interface {
 	ComputeSum(ctx context.Context, in *SumRequest, opts ...grpc.CallOption) (*ResultReply, error)
 }
 
-type computeSumClient struct {
+type sumComputerClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewComputeSumClient(cc grpc.ClientConnInterface) ComputeSumClient {
-	return &computeSumClient{cc}
+func NewSumComputerClient(cc grpc.ClientConnInterface) SumComputerClient {
+	return &sumComputerClient{cc}
 }
 
-func (c *computeSumClient) ComputeSum(ctx context.Context, in *SumRequest, opts ...grpc.CallOption) (*ResultReply, error) {
+func (c *sumComputerClient) ComputeSum(ctx context.Context, in *SumRequest, opts ...grpc.CallOption) (*ResultReply, error) {
 	out := new(ResultReply)
-	err := c.cc.Invoke(ctx, "/ComputeSum/ComputeSum", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sum.SumComputer/ComputeSum", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ComputeSumServer is the server API for ComputeSum service.
-type ComputeSumServer interface {
+// SumComputerServer is the server API for SumComputer service.
+type SumComputerServer interface {
 	ComputeSum(context.Context, *SumRequest) (*ResultReply, error)
 }
 
-// UnimplementedComputeSumServer can be embedded to have forward compatible implementations.
-type UnimplementedComputeSumServer struct {
+// UnimplementedSumComputerServer can be embedded to have forward compatible implementations.
+type UnimplementedSumComputerServer struct {
 }
 
-func (*UnimplementedComputeSumServer) ComputeSum(ctx context.Context, req *SumRequest) (*ResultReply, error) {
+func (*UnimplementedSumComputerServer) ComputeSum(ctx context.Context, req *SumRequest) (*ResultReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ComputeSum not implemented")
 }
 
-func RegisterComputeSumServer(s *grpc.Server, srv ComputeSumServer) {
-	s.RegisterService(&_ComputeSum_serviceDesc, srv)
+func RegisterSumComputerServer(s *grpc.Server, srv SumComputerServer) {
+	s.RegisterService(&_SumComputer_serviceDesc, srv)
 }
 
-func _ComputeSum_ComputeSum_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SumComputer_ComputeSum_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SumRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ComputeSumServer).ComputeSum(ctx, in)
+		return srv.(SumComputerServer).ComputeSum(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ComputeSum/ComputeSum",
+		FullMethod: "/sum.SumComputer/ComputeSum",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ComputeSumServer).ComputeSum(ctx, req.(*SumRequest))
+		return srv.(SumComputerServer).ComputeSum(ctx, req.(*SumRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _ComputeSum_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "ComputeSum",
-	HandlerType: (*ComputeSumServer)(nil),
+var _SumComputer_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "sum.SumComputer",
+	HandlerType: (*SumComputerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "ComputeSum",
-			Handler:    _ComputeSum_ComputeSum_Handler,
+			Handler:    _SumComputer_ComputeSum_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

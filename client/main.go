@@ -5,12 +5,12 @@ import (
 	"log"
 	"time"
 
+	pb ".."
 	"google.golang.org/grpc"
-	pb "github.com/Shiva-mahdavian/grpc-gateway-test"
 )
 
 const (
-	address     = "localhost:50051"
+	address = "localhost:9090"
 )
 
 func main() {
@@ -20,7 +20,7 @@ func main() {
 		log.Fatalf("did not connect: %v", err)
 	}
 	defer conn.Close()
-	client := pb.NewComputeSumClient(conn)
+	client := pb.NewSumComputerClient(conn)
 
 	// Contact the server and print out its response.
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)

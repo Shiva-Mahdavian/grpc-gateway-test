@@ -1,19 +1,20 @@
 package main
 
 import (
+	pb ".."
 	"context"
+	"fmt"
 	"google.golang.org/grpc"
-	pb "github.com/Shiva-mahdavian/grpc-gateway-test"
 	"log"
 	"net"
 )
 
 const (
-	port = ":50051"
+	port = ":9090"
 )
 
 type ComputeSumServer struct {
-	pb.UnimplementedComputeSumServer
+	pb.UnimplementedSumComputerServer
 }
 
 func (s *ComputeSumServer) ComputeSum(ctx context.Context, in *pb.SumRequest) (*pb.ResultReply, error) {
@@ -28,7 +29,8 @@ func main() {
 		log.Fatalf("failed to listen: %v", err)
 	}
 	s := grpc.NewServer()
-	pb.RegisterComputeSumServer(s, &ComputeSumServer{})
+	pb.RegisterSumComputerServer(s, &ComputeSumServer{})
+	fmt.Printf("going to serve on port %s\n", port)
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}
