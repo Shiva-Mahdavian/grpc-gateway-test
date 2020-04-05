@@ -1,7 +1,7 @@
 package main
 
 import (
-	pb ".."
+	pb "../sum"
 	"context"
 	"fmt"
 	"google.golang.org/grpc"

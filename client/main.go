@@ -5,7 +5,7 @@ import (
 	"log"
 	"time"
 
-	pb ".."
+	pb "../sum"
 	"google.golang.org/grpc"
 )
 
