@@ -6,3 +6,6 @@ http:
     - selector: sum.SumComputer.ComputeSum
       post: "/test/sum"
       body: "*"
+    - selcetor: randomSelector.Selector.Select
+      post: "/test/random"
+      body: "*"
