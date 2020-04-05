@@ -10,7 +10,6 @@ package sum
 
 import (
 	"context"
-	"fmt"
 	"io"
 	"net/http"
 
@@ -43,7 +42,7 @@ func request_SumComputer_ComputeSum_0(ctx context.Context, marshaler runtime.Mar
 	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	fmt.Println("going to sedn computeSum")
+
 	msg, err := client.ComputeSum(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
